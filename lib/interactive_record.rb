@@ -60,7 +60,7 @@ def self.find_by_name(name)
 end 
 
 def self.find_by(att)
-  sql = "SELECT * FROM #{table_name} WHERE #{att.keys.join()} = #{att.values.first}"
+  sql = "SELECT * FROM #{table_name} WHERE #{att.keys.join()} = #{att.values.to_s.first}"
   DB[:conn].execute(sql)
 end 
   
